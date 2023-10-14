@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b426091778e443048b38e923dadb8f4d
+guid: 1c5830d46a33e954ebec10ee1fa1d07d
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -9,17 +9,15 @@ ScriptedImporter:
   assetBundleVariant: 
   script: {fileID: 11500000, guid: cc34d0f3dc257a442819830b408c5322, type: 3}
   missingFiles: []
-  errors:
-  - Could not generate asset path for '../../../RPGAssets/Tilemap/background.png'
-  - 'Missing texture asset: ../../../RPGAssets/Tilemap/background.png'
+  errors: []
   warnings: []
   missingSortingLayers: []
   missingLayers: []
   missingTags: []
   importerVersion: 13
-  pixelsPerUnit: 100
+  pixelsPerUnit: 32
   edgesPerEllipse: 32
-  numberOfObjectsImported: 2
+  numberOfObjectsImported: 3011
   useSpriteAtlas: 1
   atlasWidth: 2048
   atlasHeight: 2048

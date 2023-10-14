@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a8e468f6a882b0640b93d0311cc1e7b5
+guid: 8f4f5d27669c62647a34c0eaf9f36316
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -9,34 +9,16 @@ ScriptedImporter:
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 1fa25d03934ea624a82bf2fcee6f0873, type: 3}
   missingFiles: []
-  errors:
-  - Errors detected in tileset 'background.tsx'. Check the tileset inspector for
-    more details. Your map may be broken until these are fixed.
-  - Could not find tile 284. Make sure the tilesets were successfully imported.
-  - Could not find tile 312. Make sure the tilesets were successfully imported.
-  - Could not find tile 311. Make sure the tilesets were successfully imported.
-  - Could not find tile 288. Make sure the tilesets were successfully imported.
-  - Could not find tile 285. Make sure the tilesets were successfully imported.
-  - Could not find tile 151. Make sure the tilesets were successfully imported.
-  - Could not find tile 1449. Make sure the tilesets were successfully imported.
-  - Could not find tile 776. Make sure the tilesets were successfully imported.
-  - Could not find tile 1252. Make sure the tilesets were successfully imported.
-  - Could not find tile 744. Make sure the tilesets were successfully imported.
-  - Could not find tile 88. Make sure the tilesets were successfully imported.
-  - Could not find tile 86. Make sure the tilesets were successfully imported.
-  - Could not find tile 1. Make sure the tilesets were successfully imported.
-  - Could not find tile 743. Make sure the tilesets were successfully imported.
-  - Could not find tile 25. Make sure the tilesets were successfully imported.
-  - Could not find tile 15. Make sure the tilesets were successfully imported.
+  errors: []
   warnings: []
   missingSortingLayers: []
   missingLayers: []
   missingTags: []
   importerVersion: 26
-  pixelsPerUnit: 100
+  pixelsPerUnit: 32
   edgesPerEllipse: 32
   numberOfObjectsImported: 2
-  tilesAsObjects: 0
+  tilesAsObjects: 1
   sortingMode: 0
   isIsometric: 0
   customImporterClassName: 
