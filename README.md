@@ -1,3 +1,3 @@
 # RPG
  
-https://mterwilleger.github.io/RPG/
+Play: https://mterwilleger.github.io/RPG/
