@@ -43,6 +43,8 @@ public class Menu : MonoBehaviourPunCallbacks, ILobbyCallbacks
         if(PhotonNetwork.InRoom)
         {
             //Go to Lobby
+            SetScreen(lobbyScreen);
+            UpdateLobbyUI();
 
             // Make the room Visible again
             PhotonNetwork.CurrentRoom.IsVisible = true;
@@ -91,11 +93,61 @@ public class Menu : MonoBehaviourPunCallbacks, ILobbyCallbacks
         SetScreen(lobbyBrowserScreen);
     }
 
+
+
     // Create ROOM SCREEN
 
     public void OnCreateButton (TMP_InputField roomNameInput)
     {
         NetworkManager.instance.CreateRoom(roomNameInput.text);
+    }
+
+
+
+    // LOBBY SCREEN
+
+    public override void OnJoinedRoom ()
+    {
+        SetScreen(lobbyScreen);
+        photonView.RPC("UpdateLobbyUI", RpcTarget.All);
+    }
+
+    public override void OnPlayerLeftRoom (Player otherPlayer)
+    {
+        UpdateLobbyUI();
+    }
+
+    [PunRPC]
+    void UpdateLobbyUI()
+    {
+        //enable or disable start game depending on if were the host
+        startGameButton.interactable = PhotonNetwork.IsMasterClient;
+
+        //Display all players
+        playerListText.text = "";
+
+        foreach(Player player in PhotonNetwork.PlayerList)
+            playerListText.text += player.NickName + "\n";
+
+        // set the room info text
+        roomInfoText.text = "<b>Room Name</b>\n" + PhotonNetwork.CurrentRoom.Name;
+    }
+
+
+    public void OnStartGameButton ()
+    {
+        //hide the room
+        PhotonNetwork.CurrentRoom.IsOpen = false;
+        PhotonNetwork.CurrentRoom.IsVisible = false;
+
+        //tell everyone to load into the game scene
+        NetworkManager.instance.photonView.RPC("ChangeScene", RpcTarget.All, "Game");
+    }
+
+    public void OnLeaveLobbyButton ()
+    {
+        PhotonNetwork.LeaveRoom();
+        SetScreen(mainScreen);
     }
 
 }
