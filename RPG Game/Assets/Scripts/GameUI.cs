@@ -18,6 +18,6 @@ public class GameUI : MonoBehaviour
 
     public void UpdateGoldText (int gold)
     {
-        goldText.text = "<b>Gold:</> " + gold;
+        goldText.text = "<b>Gold:</b> " + gold;
     }
 }
