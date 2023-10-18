@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviourPun
             float dist = Vector2.Distance(transform.position, targetPlayer.transform.position);
 
             //if were able to attack player do so
-            if(dist < attackRange && Time.time - lastAttackTime >= attackRange)
+            if(dist < attackRange && Time.time - lastAttackTime >= attackRate)
                 Attack();
             //Otherwise do we move after the player?
             else if(dist > attackRange)
@@ -97,6 +97,45 @@ public class Enemy : MonoBehaviourPun
                 }
             }
         }
+    }
+
+    [PunRPC]
+    public void TakeDamage (int damage)
+    {
+        curHp -= damage;
+
+        //update HealthBar
+        healthBar.photonView.RPC("UpdateHealthBar", RpcTarget.All, curHp);
+
+        if(curHp <= 0)
+            Die();
+        else
+        {
+            photonView.RPC("FlashDamage", RpcTarget.All);
+        }
+            
+    }
+    
+    [PunRPC]
+    void FlashDamage()
+    {
+        StartCoroutine(DamageFlash());
+
+        IEnumerator DamageFlash ()
+        {
+            sr.color = Color.red;
+            yield return new WaitForSeconds(0.05f);
+            sr.color = Color.white;
+        }
+    }
+
+    void Die ()
+    {
+        if(objectToSpawnOnDeath != string.Empty)
+            PhotonNetwork.Instantiate(objectToSpawnOnDeath, transform.position, Quaternion.identity);
+
+        //destroy accross network
+        PhotonNetwork.Destroy(gameObject);
     }
 
 }

@@ -139,21 +139,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2547c22532c5743990e348726a4c8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyName: 
-  moveSpeed: 0
-  curHp: 0
-  maxHp: 0
-  chaseRange: 0
-  attackRange: 0
+  enemyName: Enemy
+  moveSpeed: 3
+  curHp: 20
+  maxHp: 20
+  chaseRange: 5
+  attackRange: 1.5
   playerDetectRate: 0.2
   lastPlayerDetectTime: 0
-  objectToSpawnOnDeath: 
-  damage: 0
-  attackRate: 0
+  objectToSpawnOnDeath: GoldPickup
+  damage: 5
+  attackRate: 0.5
   lastAttackTime: 0
-  healthBar: {fileID: 0}
-  sr: {fileID: 0}
-  rig: {fileID: 0}
+  healthBar: {fileID: 2655293642283601082}
+  sr: {fileID: 4039225838806320028}
+  rig: {fileID: 4039225838806320031}
 --- !u!114 &8822316334468456652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,3 +299,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7846465246399542881, guid: dfb6298fa9e4e2349a60ec0818ffe777, type: 3}
   m_PrefabInstance: {fileID: 8990527913166056602}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2655293642283601082 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6349436654542250016, guid: dfb6298fa9e4e2349a60ec0818ffe777, type: 3}
+  m_PrefabInstance: {fileID: 8990527913166056602}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 842a129e892970347b2b570c02fb65ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
